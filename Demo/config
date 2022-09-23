@@ -1,0 +1,6 @@
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaaka76hzot2u3n5pur3by5jl72kbe7jl5mixrgc6zhbeeuw6ejw63a
+fingerprint=1d:ea:2a:62:ee:85:fc:e6:c0:f0:2d:d3:e3:b7:47:83
+tenancy=ocid1.tenancy.oc1..aaaaaaaa4hhdhmwv4kjobcbbkqaguv3mtrj5iqkh65t3jlmbgsfb2kbpjrrq
+region=us-sanjose-1
+key_file=C:\Users\Cory\Desktop\oci_with_config\oci_private_key.pem
