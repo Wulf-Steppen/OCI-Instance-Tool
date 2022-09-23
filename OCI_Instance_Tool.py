@@ -308,5 +308,5 @@ while to_try:
             sys.exit()
 
 print(f"\n[bold underline white]Thank you for using the OCI Instance Tool! Congratulations on your new OCI instance [bold cyan]{instance_display_name}[/bold cyan]. Remember to edit your vnic to get a public IP address![/bold underline white]\n")
-print(Panel.fit("If you enjoyed this little CLI adventure, feel free to buy me a :coffee:[link=coffee.site]Coffee[/link]"))
+print(Panel.fit("If you enjoyed this little CLI adventure, feel free to buy me a :coffee:[https://www.buymeacoffee.com/wulfsteppen]Coffee[/link]"))
         
