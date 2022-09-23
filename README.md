@@ -82,7 +82,7 @@ This artricle by Tri Ngyuen [How to create a free Oracle VPS with Python script 
 [Back to top](#oci-instance-tool)
 
 ## IFTTT
-Its probably handy to have your maker url handy in a txt document or something. Setting this up is actually very straight-forward. Create a ***Webhook*** applet that accepts ***web requests***. Once the applet is created you can grab your maker url containing the applet name and key you'll need. Should look somthing like
+Its probably handy to have your maker url ready in a txt document or something. Setting this up is actually very straight-forward. Create a ***Webhook*** applet that accepts ***web requests***. Once the applet is created you can grab your maker url containing the applet name and key you'll need. Should look somthing like
 ```
 https://maker.ifttt.com/trigger/{applet}/with/key/{your_key}
 ```
@@ -124,7 +124,7 @@ The demo folder can be referenced for file content, structure, and usage. It con
 
 # License
 
-[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./License)
 
 Do whatever you want with this, just don't use it to DDOS Oracle, pls.
 <hr>
