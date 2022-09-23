@@ -122,15 +122,15 @@ And you're off. The tool will first validate you have enough free resources left
 
 The demo folder can be referenced for file content, structure, and usage. It contains a demo version of the `OCI Instance Tool`, an example `POST` request json file, and an example `PEM Key` file. Since you'll be generating actual requests to Oracle that contains your sensiticve information, using the demo to get a feel for the adventure could be helpful.
 
-Open `post_example.json` and copy the contents. **It's important this all stays on one line**.
+In the `Demo` folder, open `post_example.json` and copy the contents. **It's important this all stays on one line**.
 
 Run: 
 
 ```
-python OCI_Instance_Tool_Dome.py
+python OCI_Instance_Tool_Demo.py
 ```
 
-When promtped, paste the contents of `post_example.json` and hit enter. 
+When promtped, paste the contents of `post_example.json` and hit `[enter]`. 
 
 [Back to top](#oci-instance-tool)
 
