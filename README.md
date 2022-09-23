@@ -1,10 +1,17 @@
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+
+
 
 # OCI Instance Tool
-![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+
+<image src="./assets/logo.png" width = 126 align = center> OCI Instance Tool
+
 
 Generate automated instance requests to Oracles Cloud Interface. 
 
 Inspired by chacuavip10's [oci_auto](https://github.com/chacuavip10/oci_auto) and supported by these awesome open sourced libraries: [questionary](https://github.com/tmbo/questionary) , [rich_](https://github.com/Textualize/rich) , and [requests](https://github.com/psf/requests).
+
+App logo brought to you by an AI who did it's (their?) best.
 
 # Table of Contents
 - [OCI Instance Tool](#oci-instance-tool)
@@ -58,6 +65,8 @@ Wise words indeed.
 This tool was written in Windows for Windows. I'm actually not sure how this would function in other CLI's, but if you want to give it a go or fork the project and make a couple changes, be my guest.
 
 You'll need to install the [OCI CLI](https://github.com/oracle/oci-cli), [requests](https://github.com/psf/requests), [rich_](https://github.com/Textualize/rich), and [questionary](https://github.com/tmbo/questionary).
+
+[//]: # (python libraries)
 
 ## OCI CLI
 ``` 
