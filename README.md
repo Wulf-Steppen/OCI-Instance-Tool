@@ -4,7 +4,7 @@
 
 # OCI Instance Tool
 
-<image src="./assets/logo.png" width = 126 align = center> OCI Instance Tool
+<image src="./assets/banner_logo.png">
 
 
 Generate automated instance requests to Oracles Cloud Interface. 
