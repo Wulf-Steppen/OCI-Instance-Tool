@@ -20,7 +20,7 @@ App logo brought to you by an AI who did it's (their?) best.
 - [Pre·req·ui·sites](#prerequisites)
     - <details><summary>Python Libraries</summary>
 
-        - [OCI CLI](#oci-cli)
+        - [OCI](#oci)
         - [requests](#requests)
         - [rich](#rich)
         - [questionary](#questionary)
