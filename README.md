@@ -1,4 +1,4 @@
-![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 
 
@@ -9,7 +9,7 @@
 
 Generate automated instance requests to Oracles Cloud Interface. 
 
-Inspired by chacuavip10's [oci_auto](https://github.com/chacuavip10/oci_auto) and supported by these awesome open sourced libraries: [questionary](https://github.com/tmbo/questionary) , [rich_](https://github.com/Textualize/rich) , and [requests](https://github.com/psf/requests).
+Inspired by chacuavip10's [oci_auto](https://github.com/chacuavip10/oci_auto) and supported by these awesome open sourced libraries: [questionary](https://github.com/tmbo/questionary) , [rich](https://github.com/Textualize/rich) , and [requests](https://github.com/psf/requests).
 
 App logo brought to you by an AI who did it's (their?) best.
 
