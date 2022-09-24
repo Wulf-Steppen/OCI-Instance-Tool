@@ -68,9 +68,9 @@ flat_cyan = Style(
 
 
 ## Welcome Message ##
-print(Panel.fit("\n[bold white]OCI Instance Tool_[i]beta[/i][/bold white][italic] A fork of [link=https://github.com/chacuavip10]chavuavip10's[/link] oci_auto[/italic]\n"
-    'Licensed with the [link=https://github.com/Wulf-Steppen/OCI-Instance-Tool/blob/master/License]MIT License[/link]\n'
-    "Made with :heart: by [italic]Cory Stanfield[/italic]"))
+print(Panel.fit("[bold white]OCI Instance Tool[/bold white][italic] A fork of [link=https://github.com/chacuavip10]chavuavip10's[/link] oci_auto[/italic]\n"
+    'Licensed with the [link=https://github.com/tmbo/questionary/blob/master/LICENSE]MIT License[/link]\n'
+    "Made with :heart: by [link=https://github.com/Wulf-Steppen?tab=repositories][italic]Wülf-Stëppen[/italic][/link]", subtitle="_[i]beta v.01[/i]"))
 print("\n[bold underline white]Welcome to the OCI Instance Tool. This tool transforms POST data into instance configuration values that can be used to automate host creation requests to OCI.[/bold underline white]\n")
 
 ## POST Parser Loop

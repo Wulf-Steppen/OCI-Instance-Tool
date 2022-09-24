@@ -40,9 +40,9 @@ App logo brought to you by an AI who did it's (their?) best.
 
 # A Tale of Two Wheels
 ## A Perfectly Good Wheel
-Oracle's cloud offers a really enticing free tier of virtual machine options that boast a mighty *up to* 4 OCPU's and 24 GBs of cloud hosted resources. The difficulty is, these free tier VM's are hard to come by and while Oracle regularly adds more, they never announce before hand. So, claiming these resources when they come avalible can feel like winning the lottery and submitting these requests manually is an absolute chore.
+Oracle's cloud offers a really enticing free tier of virtual machine options that boast a mighty *up to* 4 OCPU's and 24 GBs of cloud hosted resources. The difficulty is, these free tier VM's are hard to come by and while Oracle regularly adds more, they never announce before hand. So, claiming these resources when they come available can feel like winning the lottery and submitting these requests manually is an absolute chore.
 
-While scouring the web for solutions to this problem I can accross chacuavip10's [oci_auto](https://github.com/chacuavip10/oci_auto). This great little tool, with a little setup, lets you grab a curl command from your browsers netwrok tools and automatically submits new instance requests on your behalf on an interval. Whle this tool totally suffices and accomplishes what I was looking for, it had a few security flaws I had a hard time with. Mainly, the script stores things like file paths, ssh keys, and other sensitive information in the script and requires the user to edit the source code itself with these parameters. 
+While scouring the web for solutions to this problem I can across chacuavip10's [oci_auto](https://github.com/chacuavip10/oci_auto). This great little tool, with a little setup, lets you grab a curl command from your browsers network tools and automatically submits new instance requests on your behalf on an interval. While this tool totally suffices and accomplishes what I was looking for, it had a few security flaws I had a hard time with. Mainly, the script stores things like file paths, ssh keys, and other sensitive information in the script and requires the user to edit the source code itself with these parameters. 
 
 In addition, you had to manually pull instance parameters from the curl command. Again, great tool and totally suffices, but I'm like reeeeeally lazy when it comes to this stuff so I set out to improve on this concept and reduce the number of steps.
 
@@ -64,23 +64,23 @@ Wise words indeed.
 
 This tool was written in Windows for Windows. I'm actually not sure how this would function in other CLI's, but if you want to give it a go or fork the project and make a couple changes, be my guest.
 
-You'll need to install the [OCI CLI](https://github.com/oracle/oci-cli), [requests](https://github.com/psf/requests), [rich_](https://github.com/Textualize/rich), and [questionary](https://github.com/tmbo/questionary).
+You'll need to install the [OCI CLI](https://github.com/oracle/oci-cli), [requests](https://github.com/psf/requests), [rich](https://github.com/Textualize/rich), and [questionary](https://github.com/tmbo/questionary).
 
-[//]: # (python libraries)
+## Python Libraries
 
-## OCI CLI
+### **OCI**
 ``` 
 python pip install oci
 ```
-## requests
+### **requests**
 ```
 python pip install requests
 ```
-## rich
+### **rich**
 ```
 python pip install rich
 ```
-## questionary
+### **questionary**
 ```
 python pip install questionary
 ```
@@ -90,8 +90,10 @@ This artricle by Tri Ngyuen [How to create a free Oracle VPS with Python script 
 
 [Back to top](#oci-instance-tool)
 
-## IFTTT
-Its probably handy to have your maker url ready in a txt document or something. Setting this up is actually very straight-forward. Create a ***Webhook*** applet that accepts ***web requests***. Once the applet is created you can grab your maker url containing the applet name and key you'll need. Should look somthing like
+## Notification Options
+
+### **IFTTT**
+Its probably handy to have your maker url ready in a txt document or something. Setting this up is actually very straight-forward. Create a ***Webhook*** applet that accepts ***web requests***. Once the applet is created you can grab your maker url containing the applet name and key you'll need. Should look somthing like:
 ```
 https://maker.ifttt.com/trigger/{applet}/with/key/{your_key}
 ```
@@ -102,7 +104,7 @@ Be sure the url does not contain `\json\` as a parameter. The following values w
 
 [Back to top](#oci-instance-tool)
 
-## Telegram
+### **Telegram**
 In order to use Telegram you'll need your `Bot ID` and your `Chat ID` handy.
 
 [Back to top](#oci-instance-tool)
