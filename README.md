@@ -32,7 +32,7 @@ App logo brought to you by an AI who did it's (their?) best.
         - [Telegram](#telegram)
     </details>
 
-    - [Generating Config and Saving PEM Key](#generating-config-and-saving-pem-key)  
+    - [Creating a Configuration File and Generating an API Key](#creating-a-configuration-file-and-generating-an-api-key)  
 - [Using OCI Instance Tool](#using-oci-insatnce-tool)
 - [License](#license)
 - [Demo](#demo)       
@@ -64,11 +64,28 @@ Wise words indeed.
 
 This tool was written in Windows for Windows. I'm actually not sure how this would function in other CLI's, but if you want to give it a go or fork the project and make a couple changes, be my guest.
 
-You'll need to install the [OCI CLI](https://github.com/oracle/oci-cli), [requests](https://github.com/psf/requests), [rich](https://github.com/Textualize/rich), and [questionary](https://github.com/tmbo/questionary).
+You'll need to install the [OCI SDK](https://github.com/oracle/oci-python-sdk), [requests](https://github.com/psf/requests), [rich](https://github.com/Textualize/rich), and [questionary](https://github.com/tmbo/questionary). This can be done [from requirements](#from-requirements) or installed [individually](#python-libraries).
+
+#
+
+## From Requirements
+
+From the root of OCI Instance Tool's directory
+```
+pip install -r requirements.txt
+```
+**-OR-**
+
+To upgrade exisiting packages to their required version:
+```
+pip install --upgrade -r requirements.txt
+```
+
+#
 
 ## Python Libraries
 
-### **OCI**
+### **OCI Python SDK**
 ``` 
 python pip install oci
 ```
@@ -84,11 +101,28 @@ python pip install rich
 ```
 python pip install questionary
 ```
-## Generating Config and Saving PEM Key
 
-This artricle by Tri Ngyuen [How to create a free Oracle VPS with Python script (Out of capacity)?](https://www.hintdesk.com/2022/01/15/how-to-create-a-free-oracle-vps-with-python-script-out-of-capacity/) is a great resource for creating API Keys and generating these files.
+#
+## Creating a Configuration File and Generating an API Key
+
+OCI Instance Tool will need to authenticate and communicate with your Oracle cloud account. Luckily, creating this config file and generating the API key is only a few steps. Oracle recommends [changing the file permissions](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two) so only you can view it. 
+
+From OCI's Cloud Console navigate to `**User Settings**`, 
+Under `**Resources**`, select `**API Keys**`:
+
+Select `***Add API Key***`
+-  Tick `Generate API Key Pair` and then `Download Private Key` (example key provided in demo)
+- Click `Add` and save the contents of the text area to a file (example config file provided in demo)
+- `Edit` the `[key_file]` line of the config file from the last step with the filepath to your `Private Key`
+
+```
+key_file=oci_private_key.pem
+```
+
 
 [Back to top](#oci-instance-tool)
+
+#
 
 ## Notification Options
 
@@ -104,10 +138,23 @@ Be sure the url does not contain `\json\` as a parameter. The following values w
 
 [Back to top](#oci-instance-tool)
 
+#
+
 ### **Telegram**
-In order to use Telegram you'll need your `Bot ID` and your `Chat ID` handy.
+In order to use Telegram you'll need your `Bot ID` and your `Chat ID` handy. You can follow this tutorial by Man Hay Hong for a more in depth guide [How to create a Telegram Bot](https://medium.com/@ManHay_Hong/how-to-create-a-telegram-bot-and-send-messages-with-python-4cf314d9fa3e)
+
+- Search `@BotFather` and send a `/start` message
+- Send another `/newbot` message
+- Save the APIK token, this is your `Bot ID`
+- Start a chat with your new bot `/start` and navigate to
+```
+https://api.telegram.org/bot<yourtoken>/getUpdates
+```
+- In the json blob is `"id"`, this is your `Chat ID`
 
 [Back to top](#oci-instance-tool)
+
+
 
 # Using OCI Insatnce Tool
 To run the tool, in cmd, navigate to the folder containing `OCI_Instance_Tool.py`. For an easier experience the folder should also contain your config file and your PEM key file. However, as long as your config file contains the path to your PEM file, this isn't at all necessary. 
@@ -128,6 +175,8 @@ Once started, the tool will ask you a few questions and as long as you have your
 And you're off. The tool will first validate you have enough free resources left in your account and no exisiting instances with the same display name, package your instance request, and start trying to claim instamces on your behalf. 
 
 [Back to top](#oci-instance-tool)
+
+#
 
 ## Demo
 

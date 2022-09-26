@@ -1,17 +1,30 @@
 import time
+import sys
 from time import sleep
 
+from sys import version_info
 from rich.console import Console
+from rich import print
 
 ## init Rich Console ##
 console = Console(no_color = True, log_path = False)
 
+## validate Python version##
+pv = version_info
+
 loading = True
 while loading:
     with console.status(f"", spinner='bouncingBall', spinner_style="bold white") as status:
+        status.update("Validating Python version...")
+        sleep(2)
+        if pv[0] < 3:
+            print("[bold red]OCI Instance Tool requires Python 3+!")
+            sys.exit()
+        else:
+            status.update("Validation Pass!")
+            sleep(1)
         sleep(.16)
         status.update("Importing literally time itself...")
-        from rich import print
         sleep(.16)
         status.update("Importing requests...")
         import requests
@@ -30,7 +43,6 @@ while loading:
         sleep(.16)
         status.update("Importing oci...")
         import oci
-
         status.update("From pathlib importing path...")
         from pathlib import Path
         sleep(.16)
@@ -68,9 +80,9 @@ flat_cyan = Style(
 
 
 ## Welcome Message ##
-print(Panel.fit("[bold white]OCI Instance Tool[/bold white][italic] A fork of [link=https://github.com/chacuavip10]chavuavip10's[/link] oci_auto[/italic]\n"
-    'Licensed with the [link=https://github.com/tmbo/questionary/blob/master/LICENSE]MIT License[/link]\n'
-    "Made with :heart: by [link=https://github.com/Wulf-Steppen?tab=repositories][italic]Wülf-Stëppen[/italic][/link]", subtitle="_[i]beta v.01[/i]"))
+print(Panel.fit("[bold white]Fork: [/bold white][italic][link=https://github.com/chacuavip10]chavuavip10's[/link] oci_auto[/italic]\n"
+    '[bold white]Licensed:[/bold white] [i][link=https://github.com/tmbo/questionary/blob/master/LICENSE]MIT License[/i][/link]\n'
+    '[bold white]Made:[/bold white] [i]:heart: [link=https://github.com/Wulf-Steppen?tab=repositories]Wülf-Stëppen[/italic][/link]', title="[bold white]OCI Instance Tool[/bold white]", title_align="left", subtitle="[i][bold white]beta[/bold white]_v.01[/i]", subtitle_align='right'))
 print("\n[bold underline white]Welcome to the OCI Instance Tool. This tool transforms POST data into instance configuration values that can be used to automate host creation requests to OCI.[/bold underline white]\n")
 
 ## POST Parser Loop
@@ -156,7 +168,6 @@ while noti_loop:
         questionary.print("Remember to set-up your Webhook applet using Web Request as the trigger!\nThe following values will accompany your web request: \n\n  value1 = instance_display_name\n  value2 = domain\n  value3 = instance_size\n", style = "italic" )
         break
     elif noti_type == 'Telegram':
-        session = requests.Session()
         bot_api = questionary.text("Bot API:", qmark='>>', style=flat_cyan).ask()
         chat_id = questionary.text("Chat ID:", qmark='>>', style=flat_cyan).ask()
         print(f"Creating {instance_display_name} with {instance_size}. When the instance is claimed you will be notified through {noti_type}!")
@@ -248,7 +259,7 @@ while val:
         #initiate notification parameters
         status.update(f"[bold white]Cleaning up a few things...[/bold white]")
         sleep(2)
-        requests.session()
+        session = requests.session()
 
 
     break    
@@ -276,8 +287,12 @@ while to_try:
             to_launch_instance.launch_instance(instance_detail)
             to_try = False
             # post to IFTTT
-            requests.post(f"{url}?value1={value1}&value2={value2}&value3={value3}")
-            session.close()
+            if noti_type == "IFTTT":
+                requests.post(f"{url}?value1={value1}&value2={value2}&value3={value3}")
+                session.close()
+            elif noti_type == "Telegram":
+                session.get(f'https://api.telegram.org/bot{bot_api}/sendMessage?chat_id={chat_id}&text={instance_display_name} created with {instance_size}')
+                session.close()
         except oci.exceptions.ServiceError as e:
             if e.status == 500:
                 # Out of host capacity.

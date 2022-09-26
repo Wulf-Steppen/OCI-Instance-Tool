@@ -1,17 +1,29 @@
 import time
+import sys
 from time import sleep
 
 from rich.console import Console
+from rich import print
 
 ## init Rich Console ##
 console = Console(no_color = True, log_path = False)
 
+from sys import version_info
+pv = version_info
+
 loading = True
 while loading:
     with console.status(f"", spinner='bouncingBall', spinner_style="bold white") as status:
+        status.update("Validating Python version...")
+        sleep(2)
+        if pv[0] < 3:
+            print("[bold red]OCI Instance Tool requires Python 3+!")
+            sys.exit()
+        else:
+            status.update("Validation Pass!")
+            sleep(1)
         sleep(.16)
         status.update("Importing literally time itself...")
-        from rich import print
         sleep(.16)
         status.update("Importing requests...")
         import requests
@@ -67,9 +79,9 @@ flat_cyan = Style(
 
 
 ## Welcome Message ##
-print(Panel.fit("[bold white]OCI Instance Tool[/bold white][italic] A fork of [link=https://github.com/chacuavip10]chavuavip10's[/link] oci_auto[/italic]\n"
-    'Licensed with the [link=https://github.com/tmbo/questionary/blob/master/LICENSE]MIT License[/link]\n'
-    "Made with :heart: by [link=https://github.com/Wulf-Steppen?tab=repositories][italic]Wülf-Stëppen[/italic][/link]", subtitle="_[i]beta v.01[/i]"))
+print(Panel.fit("[bold white]Fork: [/bold white][italic][link=https://github.com/chacuavip10]chavuavip10's[/link] oci_auto[/italic]\n"
+    '[bold white]Licensed:[/bold white] [i][link=https://github.com/tmbo/questionary/blob/master/LICENSE]MIT License[/i][/link]\n'
+    '[bold white]Made:[/bold white] [i]:heart: [link=https://github.com/Wulf-Steppen?tab=repositories]Wülf-Stëppen[/italic][/link]', title="[bold white]OCI Instance Tool[/bold white]", title_align="left", subtitle="[i][bold white]beta[/bold white]_v.01[/i]", subtitle_align='right'))
 print("\n[bold underline white]Welcome to the OCI Instance Tool. This tool transforms POST data into instance configuration values that can be used to automate host creation requests to OCI.[/bold underline white]\n")
 
 ## POST Parser Loop
