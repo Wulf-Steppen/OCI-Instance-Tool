@@ -62,6 +62,8 @@ Wise words indeed.
 [Back to top](#oci-instance-tool)
 # Pre·req·ui·sites
 
+**Python 3+ is required** and the script will terminate if a lower version is installed.
+
 This tool was written in Windows for Windows. I'm actually not sure how this would function in other CLI's, but if you want to give it a go or fork the project and make a couple changes, be my guest.
 
 You'll need to install the [OCI SDK](https://github.com/oracle/oci-python-sdk), [requests](https://github.com/psf/requests), [rich](https://github.com/Textualize/rich), and [questionary](https://github.com/tmbo/questionary). This can be done [from requirements](#from-requirements) or installed [individually](#python-libraries).
