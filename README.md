@@ -110,7 +110,7 @@ python pip install questionary
 OCI Instance Tool will need to authenticate and communicate with your Oracle cloud account. Luckily, creating this config file and generating the API key is only a few steps. Oracle recommends [changing the file permissions](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two) so only you can view it. 
 
 From OCI's Cloud Console navigate to **`User Settings`**, 
-Under `**Resources**`, select **`API Keys`**:
+Under **`Resources`**, select **`API Keys`**:
 
 Select **`Add API Key`**
 -  Tick `Generate API Key Pair` and then `Download Private Key` (example key provided in demo)
