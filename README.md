@@ -34,6 +34,7 @@ App logo brought to you by an AI who did it's (their?) best.
 
     - [Creating a Configuration File and Generating an API Key](#creating-a-configuration-file-and-generating-an-api-key)  
 - [Using OCI Instance Tool](#using-oci-insatnce-tool)
+- [Command Line Arguments](#command-line-arguements)
 - [License](#license)
 - [Demo](#demo)       
 
@@ -166,15 +167,69 @@ Run:
 python OCI_Instance_Tool.py
 ```
 
-Once started, the tool will ask you a few questions and as long as you have your ducks in a row this part should be easy.
+<span style="color:grey">*Options*: {-h,-s,--config_file,-d,-ch}</span>
 
-* Paste POST data output
-* Confirm Instance Configuartion is correct
-* Enter the filepath to your config file 
-    * *you can use `[tab]` to navigate your folders in the cli*
-* Notification preference and notification preference settings
+The tool will first import all of the required libraries. While this mostly depends on your PC, OCI will take a while to import. Be patient, it isn't stuck.
 
-And you're off. The tool will first validate you have enough free resources left in your account and no exisiting instances with the same display name, package your instance request, and start trying to claim instamces on your behalf. 
+1. Paste POST data output here:
+    * This question only accepts `{json}` and will reject all other text.
+2. Confirm the configuration parser correctly identified your request parameters
+    * `Display Name`
+    * `Domain`
+    * `Compartment ID`
+    * `Image ID`
+    * `Subnet ID`
+    * `SSH Key`
+    * `Shape Config`
+3. ***Optional:*** Enter the filepath to your config file 
+    * *You can use `[tab]` to navigate your folders in the cli*
+    * Or use `--config_file {path to your file}` at runtime to skip this question
+4. Notification preference and notification preference settings
+    * Indicate your notification preference
+    * This will generate a folloup question asking for your **IFTTT** `Maker URL` or your **Telegram** `Chat Id` and `Bot ID`
+5. Once these questions have been answered **OCI Instance Tool** will validate there are no exisiting resources with duplicate display names or configurations that will exceed your free tier resource limits.    
+
+OCI Instance tool will then attempt to claim your instance every thirty seconds until it suceedes. This can take a very, very long time depending on domain availibility. . 
+
+[Back to top](#oci-instance-tool)
+
+## Command Line Arguements
+OCI Instance Tool accepts the following arguments at runtime
+
+### Help
+```
+--help, h 
+```
+
+Shows the help page with availible arguments
+
+### Style
+```
+--Style, -s
+```
+
+changes the color scheme of the tool (ex. `-s 155` or `--style dark_olive_green2` would produce <span style="color:#afff5f">colored text!</span>
+
+### Config_File
+```
+--config_file
+```
+
+Allows you to specify your config file path at runtime. The config location question is an interactive file tree element. This may save time navigating complicated file structures.
+
+### Debug
+```--debug, -d
+```
+Enables application debug options. This is in development and currently only outputs a runtime when building the color help page
+
+### Color Help
+```
+--color_help, -ch
+```
+
+This is the color help page. This will produce all the availible colors that can be referenced by style using name or number. Rich supports TrueColors and colors not listed here will need to be referenced by their hex code. (beta, expect bugs)
+
+<image src="./assets/rich colors.png">
 
 [Back to top](#oci-instance-tool)
 
