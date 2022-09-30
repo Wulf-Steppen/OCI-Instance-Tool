@@ -189,7 +189,7 @@ The tool will first import all of the required libraries. While this mostly depe
     * This will generate a folloup question asking for your **IFTTT** `Maker URL` or your **Telegram** `Chat Id` and `Bot ID`
 5. Once these questions have been answered **OCI Instance Tool** will validate there are no exisiting resources with duplicate display names or configurations that will exceed your free tier resource limits.    
 
-OCI Instance tool will then attempt to claim your instance every thirty seconds until it suceedes. This can take a very, very long time depending on domain availibility. . 
+OCI Instance tool will then attempt to claim your instance every thirty seconds until it succeedes. This can take a very, very long time depending on domain availibility. . 
 
 [Back to top](#oci-instance-tool)
 
@@ -208,7 +208,7 @@ Shows the help page with availible arguments
 --Style, -s
 ```
 
-changes the color scheme of the tool (ex. `-s 155` or `--style dark_olive_green2` would produce <span style="color:#afff5f">colored text!</span>
+changes the color scheme of the tool (ex. `-s 155` or `--style dark_olive_green2` would produce <span style="color:#afff5f">colored text!</span>)
 
 ### Config_File
 ```
@@ -218,7 +218,8 @@ changes the color scheme of the tool (ex. `-s 155` or `--style dark_olive_green2
 Allows you to specify your config file path at runtime. The config location question is an interactive file tree element. This may save time navigating complicated file structures.
 
 ### Debug
-```--debug, -d
+```
+--debug, -d
 ```
 Enables application debug options. This is in development and currently only outputs a runtime when building the color help page
 

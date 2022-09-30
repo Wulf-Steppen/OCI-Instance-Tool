@@ -194,8 +194,8 @@ flat_ = Style(
         ("qmark", "fg:#673ab7 bold"),
         ("question", "bold"),
         ("pointer", "fg:#673ab7 bold"),
-        ("selected", "fg:##6c6c6c bold"),
-        ("answer", "fg:##6c6c6c bold"),
+        ("selected", "fg:#6c6c6c bold"),
+        ("answer", "fg:#6c6c6c bold"),
     ]
 )
 
